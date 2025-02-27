@@ -1,0 +1,63 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+#outputCanvas {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+    height: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.glasses-option {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.glasses-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.glasses-option img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.glasses-option.selected {
+    border: 2px solid #0d6efd;
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+#glasses-overlay {
+    pointer-events: none;
+}
+
+.face-shape-description {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #6c757d;
+}
+
+.recommendation-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
