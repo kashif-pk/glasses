@@ -113,23 +113,33 @@ def analyze_face_shape(landmarks):
     jaw_to_forehead_ratio = jaw_width / forehead_width
     cheekbone_to_jaw_ratio = face_width / jaw_width
 
-    # Determine face shape using improved thresholds
-    if 0.9 <= width_to_height_ratio <= 1.05 and cheekbone_to_jaw_ratio < 1.1:
-        face_shape = "Round"
-    elif width_to_height_ratio < 0.85 and jaw_to_forehead_ratio < 0.9:
+    # Debugging print statements
+    print("\n==== Face Shape Debugging ====")
+    print(f"Face Width (Cheekbone Width): {face_width}")
+    print(f"Face Height: {face_height}")
+    print(f"Jaw Width: {jaw_width}")
+    print(f"Forehead Width: {forehead_width}")
+    print(f"Width to Height Ratio: {width_to_height_ratio}")
+    print(f"Jaw to Forehead Ratio: {jaw_to_forehead_ratio}")
+    print(f"Cheekbone to Jaw Ratio: {cheekbone_to_jaw_ratio}")
+
+    # Improved Face Shape Classification
+    if width_to_height_ratio > 1.2 and cheekbone_to_jaw_ratio < 1.1:
+        face_shape = "Square"
+    elif width_to_height_ratio < 0.9 and jaw_to_forehead_ratio < 0.9:
         face_shape = "Oval"
     elif cheekbone_to_jaw_ratio > 1.2 and forehead_width > jaw_width:
         face_shape = "Heart"
-    elif jaw_to_forehead_ratio > 1.1 and cheekbone_to_jaw_ratio < 1.15 and forehead_width < jaw_width:
+    elif 1.15 <= jaw_to_forehead_ratio < 1.25 and forehead_width < jaw_width and cheekbone_to_jaw_ratio < 1.2:
         face_shape = "Triangle"
-    elif 0.95 <= jaw_to_forehead_ratio <= 1.05 and width_to_height_ratio < 0.85:
-        face_shape = "Square"
-    elif width_to_height_ratio > 1.05 and cheekbone_to_jaw_ratio > 1.15:
+    elif width_to_height_ratio > 1.1 and cheekbone_to_jaw_ratio > 1.15:
         face_shape = "Diamond"
     else:
         face_shape = "Oval"  # Default fallback
 
+    print(f"Detected Face Shape: {face_shape}\n")
     return face_shape
+
 
 
 
