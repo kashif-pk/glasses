@@ -6,7 +6,6 @@ bcrypt==3.2.0
 beautifulsoup4==4.10.0
 beniget==0.4.1
 blinker==1.9.0
-Brlapi==0.8.3
 Brotli==1.0.9
 catfish==4.16.3
 certifi==2020.6.20
