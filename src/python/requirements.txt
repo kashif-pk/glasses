@@ -13,11 +13,8 @@ click==8.1.8
 colorama==0.4.4
 constantly==15.1.0
 cryptography==3.4.8
-cupshelpers==1.0
 cycler==0.11.0
-dbus-python==1.2.18
 decorator==4.4.2
-defer==1.0.6
 defusedxml==0.7.1
 distro==1.7.0
 distro-info==1.1+ubuntu0.2
